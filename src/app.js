@@ -8,8 +8,8 @@ app.use(studentsRouter);
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, x-requested-with");
+    res.header("Access-Control-Allow-Methods", "GET,PUT,PATCH,POST,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Headers","Origin,Content-Type,X-Requested-With,Accept,Authorization");
     next(); // Important
 })
 
