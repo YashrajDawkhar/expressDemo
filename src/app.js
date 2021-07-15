@@ -1,9 +1,12 @@
 const express = require("express");
-
+const cors = require('cors');
 const db = require("./db/Connection");
 const port = process.env.PORT || 4000;
 const studentsRouter = require("./routers/students");
 
+app.use(cors({
+    origin: 'https://yashrajdawkhar.github.io/angular/'
+}));
 
 const app = express();
 app.use(studentsRouter);
