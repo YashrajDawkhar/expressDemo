@@ -1,18 +1,15 @@
 const express = require("express");
-const cors = require('cors');
 const db = require("./db/Connection");
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT ;
 const studentsRouter = require("./routers/students");
 
-app.use(cors({
-    origin: 'https://yashrajdawkhar.github.io/angular/'
-}));
+
 
 const app = express();
 app.use(studentsRouter);
 
 
 
-app.listen(port, () => {
-    console.log(`connection is setup at ${port}`);
+app.listen(PORT, () => {
+    console.log(`connection is setup at ${PORT}`);
 });

@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
-const DB ='mongodb+srv://Yashraj:Yash@567@cluster0.u5wg1.mongodb.net/MernStack?retryWrites=true&w=majority'
+
+const dotenv = require("dotenv");
+dotenv.config({path:'*/../config.env'});
+
+const DB =process.env.DATABASE
 mongoose.connect(DB,{
     useCreateIndex:true,
     useNewUrlParser:true,
@@ -9,7 +13,7 @@ mongoose.connect(DB,{
 }).then(()=>{
     console.log("Connection is sucessfull")
 }).catch((e)=>{
-    console.log("No Connection" +e)
+    console.log("No Connection " +e)
 }) 
 
 
